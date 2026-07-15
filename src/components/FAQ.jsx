@@ -7,11 +7,11 @@ function AccordionItem({ faq, isOpen, onClick }) {
     <div className="glass-card rounded-xl overflow-hidden">
       <button
         onClick={onClick}
-        className="w-full flex items-center justify-between p-4 sm:p-5 text-left text-white font-medium hover:bg-white/5 transition-colors"
+        className="w-full flex items-center justify-between p-4 sm:p-5 text-left text-foreground font-medium hover:bg-muted transition-colors"
       >
         <span>{faq.q}</span>
         <svg
-          className={`w-5 h-5 text-[#C026D3] transition-transform duration-300 ${
+          className={`w-5 h-5 text-primary transition-transform duration-300 ${
             isOpen ? 'rotate-45' : ''
           }`}
           fill="none"
@@ -30,7 +30,7 @@ function AccordionItem({ faq, isOpen, onClick }) {
             transition={{ duration: 0.3 }}
             className="overflow-hidden"
           >
-            <p className="px-4 sm:px-5 pb-4 sm:pb-5 text-gray-400 text-sm leading-relaxed">
+            <p className="px-4 sm:px-5 pb-4 sm:pb-5 text-muted-foreground text-sm leading-relaxed">
               {faq.a}
             </p>
           </motion.div>
@@ -53,10 +53,10 @@ export default function FAQ() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-gray-400 text-lg">
+          <p className="text-muted-foreground text-lg">
             Got questions? We have answers.
           </p>
         </motion.div>

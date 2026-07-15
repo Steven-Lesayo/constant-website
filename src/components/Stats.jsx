@@ -18,7 +18,7 @@ export default function Stats() {
                 <div className="text-3xl sm:text-4xl lg:text-5xl font-bold gradient-text mb-2">
                   {stat.value}
                 </div>
-                <div className="text-gray-400 text-sm">{stat.label}</div>
+                <div className="text-muted-foreground text-sm">{stat.label}</div>
               </div>
             ))}
           </div>

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-scroll'
-import { HERO } from '../data/constants'
+import { HERO, APP_STORE_URL, PLAY_STORE_URL } from '../data/constants'
 
 export default function Hero() {
   return (
@@ -8,13 +8,11 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Animated gradient background */}
       <div className="absolute inset-0 gradient-hero animate-gradient" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(139,0,255,0.15)_0%,_transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(var(--primary)/0.15)_0%,_transparent_60%)]" />
 
-      {/* Floating decorative orbs */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-[#8B00FF]/20 rounded-full blur-[100px]" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#C026D3]/10 rounded-full blur-[120px]" />
+      <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-[100px]" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
@@ -22,30 +20,26 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          {/* Badge */}
           <div className="inline-flex items-center gap-2 glass-card rounded-full px-4 py-1.5 mb-6">
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-            <span className="text-gray-400 text-sm">{HERO.stats}</span>
+            <span className="text-muted-foreground text-sm">{HERO.stats}</span>
           </div>
 
-          {/* Headline */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 text-glow">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight mb-6 text-glow">
             {HERO.headline.split('–')[0]}
             <span className="block gradient-text">– {HERO.headline.split('–')[1]}</span>
           </h1>
 
-          {/* Subheadline */}
-          <p className="text-gray-400 text-lg sm:text-xl max-w-2xl mx-auto mb-8">
+          <p className="text-muted-foreground text-lg sm:text-xl max-w-2xl mx-auto mb-8">
             {HERO.subheadline}
           </p>
 
-          {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
             <a
               href={PLAY_STORE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary text-white px-8 py-3 rounded-xl text-base font-semibold flex items-center gap-2"
+              className="btn-primary px-8 py-3 rounded-xl text-base font-semibold flex items-center gap-2"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
@@ -64,8 +58,7 @@ export default function Hero() {
             </Link>
           </div>
 
-          {/* Trust signals */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-gray-500">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
               <div className="flex -space-x-1">
                 {[...Array(5)].map((_, i) => (
@@ -79,16 +72,16 @@ export default function Hero() {
                   </svg>
                 ))}
               </div>
-              <span className="text-white font-semibold">{HERO.rating}★</span>
+              <span className="text-foreground font-semibold">{HERO.rating}★</span>
             </div>
             <div className="flex items-center gap-3">
-              <span className="text-gray-400">Available on</span>
+              <span className="text-muted-foreground">Available on</span>
               <div className="flex items-center gap-2">
                 <a
                   href={APP_STORE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="h-8 w-24 rounded bg-white/10 flex items-center justify-center text-xs text-gray-300 hover:bg-white/20 transition-colors"
+                  className="h-8 w-24 rounded bg-card border border-border flex items-center justify-center text-xs text-muted-foreground hover:bg-accent transition-colors"
                 >
                   App Store
                 </a>
@@ -96,7 +89,7 @@ export default function Hero() {
                   href={PLAY_STORE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="h-8 w-24 rounded bg-white/10 flex items-center justify-center text-xs text-gray-300 hover:bg-white/20 transition-colors"
+                  className="h-8 w-24 rounded bg-card border border-border flex items-center justify-center text-xs text-muted-foreground hover:bg-accent transition-colors"
                 >
                   Google Play
                 </a>

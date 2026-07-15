@@ -1,9 +1,13 @@
+export const APP_STORE_URL = 'https://apps.apple.com/app/constant-delivery'
+export const PLAY_STORE_URL =
+  'https://play.google.com/store/apps/details?id=com.constant.delivery'
+
 export const NAV_LINKS = [
   { label: 'Home', href: '#hero' },
   { label: 'Features', href: '#features' },
   { label: 'How it Works', href: '#how-it-works' },
-  { label: 'Pricing', href: '#' },
-  { label: 'Blog', href: '#' },
+  { label: 'FAQ', href: '#faq' },
+  { label: 'Contact', href: '#contact' },
 ]
 
 export const HERO = {
@@ -135,9 +139,18 @@ export const FAQS = [
   },
 ]
 
+export const DISPATCH_HUB_URL =
+  import.meta.env?.VITE_DISPATCH_HUB_URL || 'http://localhost:8080'
+
 export const CONTACT = {
   phone: '+254 712 345678',
   email: 'hello@constantdelivery.co.ke',
+  social: [
+    { label: 'X', href: 'https://x.com/constantdelivery' },
+    { label: 'IG', href: 'https://instagram.com/constantdelivery' },
+    { label: 'FB', href: 'https://facebook.com/constantdelivery' },
+    { label: 'LK', href: 'https://linkedin.com/company/constantdelivery' },
+  ],
 }
 
 export const FOOTER_LINKS = [
@@ -147,26 +160,22 @@ export const FOOTER_LINKS = [
       { label: 'Home', href: '#hero' },
       { label: 'Features', href: '#features' },
       { label: 'How it Works', href: '#how-it-works' },
-      { label: 'About Us', href: '#' },
+      { label: 'FAQ', href: '#faq' },
     ],
   },
   {
     title: 'Support',
     links: [
-      { label: 'FAQ', href: '#faq' },
       { label: 'Contact Us', href: '#contact' },
-      { label: 'Privacy Policy', href: '#' },
-      { label: 'Terms & Conditions', href: '#' },
+      { label: 'Privacy Policy', href: `${DISPATCH_HUB_URL}/privacy` },
+      { label: 'Terms & Conditions', href: `${DISPATCH_HUB_URL}/terms` },
     ],
   },
   {
     title: 'Download',
     links: [
-      { label: 'iOS App', href: '#' },
-      { label: 'Android App', href: '#' },
+      { label: 'iOS App', href: APP_STORE_URL },
+      { label: 'Android App', href: PLAY_STORE_URL },
     ],
   },
 ]
-
-export const DISPATCH_HUB_URL =
-  import.meta.env?.VITE_DISPATCH_HUB_URL || 'http://localhost:8080'

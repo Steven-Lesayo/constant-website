@@ -35,12 +35,12 @@ export default function TrackOrder() {
   }
 
   const statusColors = {
-    pending: 'text-yellow-400',
-    assigned: 'text-blue-400',
-    pickedUp: 'text-[#C026D3]',
+    pending: 'text-warning',
+    assigned: 'text-info',
+    pickedUp: 'text-primary',
     inTransit: 'text-purple-400',
-    delivered: 'text-green-400',
-    cancelled: 'text-red-400',
+    delivered: 'text-success',
+    cancelled: 'text-destructive',
   }
 
   return (
@@ -53,10 +53,10 @@ export default function TrackOrder() {
           transition={{ duration: 0.6 }}
           className="text-center mb-10"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             Track Your Package
           </h2>
-          <p className="text-gray-400 text-lg">
+          <p className="text-muted-foreground text-lg">
             Enter your order number to see real-time delivery status.
           </p>
         </motion.div>
@@ -68,19 +68,19 @@ export default function TrackOrder() {
               value={code}
               onChange={(e) => setCode(e.target.value)}
               placeholder="Enter tracking code (e.g. C-250714-1430)"
-              className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-[#8B00FF] focus:ring-1 focus:ring-[#8B00FF] transition-colors"
+              className="flex-1 bg-muted border border-input rounded-xl px-4 py-3 text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
             />
             <button
               type="submit"
               disabled={loading}
-              className="btn-primary text-white px-6 py-3 rounded-xl font-medium disabled:opacity-50"
+              className="btn-primary px-6 py-3 rounded-xl font-medium disabled:opacity-50"
             >
               {loading ? 'Tracking...' : 'Track'}
             </button>
           </form>
 
           {error && (
-            <p className="mt-4 text-red-400 text-sm text-center">{error}</p>
+            <p className="mt-4 text-destructive text-sm text-center">{error}</p>
           )}
 
           {result && (
@@ -89,17 +89,17 @@ export default function TrackOrder() {
               animate={{ opacity: 1, y: 0 }}
               className="mt-6 space-y-4"
             >
-              <div className="flex items-center justify-between p-4 rounded-xl bg-white/5">
-                <span className="text-gray-400 text-sm">Order</span>
-                <span className="text-white font-mono text-sm">
+              <div className="flex items-center justify-between p-4 rounded-xl bg-muted">
+                <span className="text-muted-foreground text-sm">Order</span>
+                <span className="text-foreground font-mono text-sm">
                   {result.orderNumber}
                 </span>
               </div>
-              <div className="flex items-center justify-between p-4 rounded-xl bg-white/5">
-                <span className="text-gray-400 text-sm">Status</span>
+              <div className="flex items-center justify-between p-4 rounded-xl bg-muted">
+                <span className="text-muted-foreground text-sm">Status</span>
                 <span
                   className={`font-medium capitalize ${
-                    statusColors[result.status] || 'text-white'
+                    statusColors[result.status] || 'text-foreground'
                   }`}
                 >
                   {result.status === 'pickedUp'
@@ -109,22 +109,22 @@ export default function TrackOrder() {
                     : result.status}
                 </span>
               </div>
-              <div className="flex items-center justify-between p-4 rounded-xl bg-white/5">
-                <span className="text-gray-400 text-sm">Pickup</span>
-                <span className="text-white text-sm text-right max-w-[200px] truncate">
+              <div className="flex items-center justify-between p-4 rounded-xl bg-muted">
+                <span className="text-muted-foreground text-sm">Pickup</span>
+                <span className="text-foreground text-sm text-right max-w-[200px] truncate">
                   {result.pickup?.label}
                 </span>
               </div>
-              <div className="flex items-center justify-between p-4 rounded-xl bg-white/5">
-                <span className="text-gray-400 text-sm">Dropoff</span>
-                <span className="text-white text-sm text-right max-w-[200px] truncate">
+              <div className="flex items-center justify-between p-4 rounded-xl bg-muted">
+                <span className="text-muted-foreground text-sm">Dropoff</span>
+                <span className="text-foreground text-sm text-right max-w-[200px] truncate">
                   {result.dropoff?.label}
                 </span>
               </div>
               {result.riderLocation && (
-                <div className="flex items-center justify-between p-4 rounded-xl bg-white/5">
-                  <span className="text-gray-400 text-sm">Rider Location</span>
-                  <span className="text-green-400 text-sm">Live</span>
+                <div className="flex items-center justify-between p-4 rounded-xl bg-muted">
+                  <span className="text-muted-foreground text-sm">Rider Location</span>
+                  <span className="text-success text-sm">Live</span>
                 </div>
               )}
             </motion.div>

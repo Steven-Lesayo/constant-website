@@ -21,10 +21,10 @@ export default function Testimonials() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             What Our Users Say
           </h2>
-          <p className="text-gray-400 text-lg">
+          <p className="text-muted-foreground text-lg">
             Join thousands of happy customers who trust Constant.
           </p>
         </motion.div>
@@ -39,30 +39,27 @@ export default function Testimonials() {
               transition={{ duration: 0.4 }}
               className="glass-card rounded-2xl p-8 sm:p-12 text-center"
             >
-              {/* Quote */}
               <svg
-                className="w-8 h-8 text-[#8B00FF]/40 mx-auto mb-6"
+                className="w-8 h-8 text-primary/40 mx-auto mb-6"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C7.546 6.068 5.983 8.789 5.983 11H10v10H0z" />
               </svg>
-              <p className="text-gray-200 text-lg sm:text-xl leading-relaxed mb-8 italic">
+              <p className="text-foreground text-lg sm:text-xl leading-relaxed mb-8 italic">
                 "{t.quote}"
               </p>
 
-              {/* Avatar */}
               <div className="flex items-center justify-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-[#8B00FF]/30 flex items-center justify-center text-white font-semibold text-sm">
+                <div className="w-12 h-12 rounded-full bg-primary/30 flex items-center justify-center text-white font-semibold text-sm">
                   {t.avatar}
                 </div>
                 <div className="text-left">
-                  <p className="text-white font-semibold">{t.name}</p>
-                  <p className="text-gray-400 text-sm">{t.role}</p>
+                  <p className="text-foreground font-semibold">{t.name}</p>
+                  <p className="text-muted-foreground text-sm">{t.role}</p>
                 </div>
               </div>
 
-              {/* Stars */}
               <div className="flex justify-center gap-1 mt-4">
                 {[...Array(t.rating)].map((_, i) => (
                   <svg
@@ -78,11 +75,10 @@ export default function Testimonials() {
             </motion.div>
           </AnimatePresence>
 
-          {/* Controls */}
           <div className="flex justify-center gap-4 mt-8">
             <button
               onClick={prev}
-              className="w-10 h-10 rounded-full glass-card flex items-center justify-center text-white hover:bg-[#8B00FF]/20 transition-colors"
+              className="w-10 h-10 rounded-full glass-card flex items-center justify-center text-foreground hover:bg-primary/20 transition-colors"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -95,15 +91,15 @@ export default function Testimonials() {
                   onClick={() => setCurrent(i)}
                   className={`w-2 h-2 rounded-full transition-all ${
                     i === current
-                      ? 'bg-[#C026D3] w-6'
-                      : 'bg-white/20 hover:bg-white/40'
+                      ? 'bg-primary w-6'
+                      : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
                   }`}
                 />
               ))}
             </div>
             <button
               onClick={next}
-              className="w-10 h-10 rounded-full glass-card flex items-center justify-center text-white hover:bg-[#8B00FF]/20 transition-colors"
+              className="w-10 h-10 rounded-full glass-card flex items-center justify-center text-foreground hover:bg-primary/20 transition-colors"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

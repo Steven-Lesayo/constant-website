@@ -14,7 +14,7 @@ const cardVariants = {
 export default function Features() {
   return (
     <section id="features" className="py-20 lg:py-28 relative">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#8B00FF]/10 rounded-full blur-[150px]" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary/10 rounded-full blur-[150px]" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -23,10 +23,10 @@ export default function Features() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             Everything You Need
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             From real-time tracking to secure payments — Constant has every delivery
             scenario covered.
           </p>
@@ -45,13 +45,13 @@ export default function Features() {
               variants={cardVariants}
               className="glass-card glass-card-hover rounded-2xl p-6 sm:p-8"
             >
-              <div className="w-12 h-12 rounded-xl bg-[#8B00FF]/20 flex items-center justify-center text-2xl mb-5">
+              <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center text-2xl mb-5">
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3">
+              <h3 className="text-xl font-semibold text-foreground mb-3">
                 {feature.title}
               </h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
+              <p className="text-muted-foreground text-sm leading-relaxed">
                 {feature.description}
               </p>
             </motion.div>

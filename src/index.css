@@ -2,39 +2,114 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --background: 220 29% 97%;
+    --foreground: 224 25% 16%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 25% 16%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 25% 16%;
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 267 84% 74%;
+    --secondary: 225 32% 95%;
+    --secondary-foreground: 224 25% 16%;
+    --muted: 228 25% 94%;
+    --muted-foreground: 222 14% 46%;
+    --accent: 263 67% 94%;
+    --accent-foreground: 262 54% 28%;
+    --success: 160 84% 38%;
+    --warning: 38 92% 50%;
+    --info: 216 90% 56%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 226 22% 86%;
+    --input: 226 22% 86%;
+    --ring: 262 83% 58%;
+    --radius: 1rem;
+    --gradient-primary: linear-gradient(135deg, hsl(262 83% 58%), hsl(270 91% 65%), hsl(281 89% 72%));
+    --gradient-surface: linear-gradient(180deg, hsl(0 0% 100%), hsl(220 29% 97%));
+    --shadow-sm: 0 1px 2px hsl(235 30% 16% / 0.06);
+    --shadow-md: 0 10px 30px hsl(252 42% 30% / 0.1);
+    --shadow-lg: 0 20px 48px hsl(252 42% 30% / 0.16);
+    --shadow-glow: 0 0 24px hsl(var(--primary) / 0.25);
+  }
 
-html {
-  scroll-behavior: smooth;
-}
+  .dark {
+    --background: 240 14% 4%;
+    --foreground: 240 22% 96%;
+    --card: 258 31% 11%;
+    --card-foreground: 240 22% 96%;
+    --popover: 258 31% 11%;
+    --popover-foreground: 240 22% 96%;
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 267 84% 74%;
+    --secondary: 248 24% 14%;
+    --secondary-foreground: 240 22% 96%;
+    --muted: 246 22% 15%;
+    --muted-foreground: 228 12% 58%;
+    --accent: 264 43% 20%;
+    --accent-foreground: 260 60% 92%;
+    --success: 160 84% 38%;
+    --warning: 38 92% 50%;
+    --info: 217 91% 60%;
+    --destructive: 0 84% 62%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 6% 14%;
+    --input: 240 6% 14%;
+    --ring: 262 83% 58%;
+    --gradient-primary: linear-gradient(135deg, hsl(262 83% 58%), hsl(270 91% 65%), hsl(281 89% 72%));
+    --gradient-surface: linear-gradient(180deg, hsl(258 31% 11%), hsl(240 14% 4%));
+    --shadow-sm: 0 1px 2px hsl(0 0% 0% / 0.5);
+    --shadow-md: 0 10px 32px hsl(262 76% 8% / 0.34);
+    --shadow-lg: 0 24px 56px hsl(262 76% 8% / 0.48);
+    --shadow-glow: 0 0 32px hsl(var(--primary) / 0.6);
+  }
 
-body {
-  margin: 0;
-  font-family: 'Inter', system-ui, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: hsl(var(--primary) / 0.35);
+    color: hsl(var(--primary-foreground));
+  }
 }
 
 @layer utilities {
   .gradient-hero {
-    background: linear-gradient(135deg, #0A0A0A 0%, #1A0033 50%, #0A0A0A 100%);
+    background: var(--gradient-surface);
   }
 
   .gradient-primary {
-    background: linear-gradient(135deg, #8B00FF 0%, #C026D3 100%);
+    background: var(--gradient-primary);
   }
 
   .gradient-text {
-    background: linear-gradient(135deg, #8B00FF 0%, #C026D3 100%);
+    background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .glass-card {
-    background: rgba(255, 255, 255, 0.05);
+    background: hsl(var(--card) / 0.5);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid hsl(var(--border));
   }
 
   .glass-card-hover {
@@ -42,35 +117,36 @@ body {
   }
 
   .glass-card-hover:hover {
-    background: rgba(139, 0, 255, 0.1);
-    border-color: rgba(139, 0, 255, 0.3);
-    box-shadow: 0 0 20px rgba(139, 0, 255, 0.3);
+    background: hsl(var(--primary) / 0.1);
+    border-color: hsl(var(--primary) / 0.3);
+    box-shadow: var(--shadow-glow);
     transform: translateY(-4px);
   }
 
   .btn-primary {
-    background: linear-gradient(135deg, #8B00FF 0%, #C026D3 100%);
+    background: var(--gradient-primary);
     transition: all 0.3s ease;
+    color: hsl(var(--primary-foreground));
   }
 
   .btn-primary:hover {
-    box-shadow: 0 0 25px rgba(139, 0, 255, 0.5);
+    box-shadow: var(--shadow-glow);
     transform: translateY(-1px);
   }
 
   .btn-outline {
-    border: 1px solid rgba(139, 0, 255, 0.5);
-    color: #C026D3;
+    border: 1px solid hsl(var(--primary) / 0.5);
+    color: hsl(var(--primary));
     transition: all 0.3s ease;
   }
 
   .btn-outline:hover {
-    background: rgba(139, 0, 255, 0.1);
-    box-shadow: 0 0 15px rgba(139, 0, 255, 0.3);
+    background: hsl(var(--primary) / 0.1);
+    box-shadow: var(--shadow-glow);
   }
 
   .text-glow {
-    text-shadow: 0 0 40px rgba(139, 0, 255, 0.3);
+    text-shadow: 0 0 40px hsl(var(--primary) / 0.3);
   }
 
   .animate-gradient {
@@ -82,5 +158,17 @@ body {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
+  }
+
+  .bg-dot-pattern {
+    background-image: radial-gradient(hsl(var(--primary) / 0.15) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .bg-grid-pattern {
+    background-image:
+      linear-gradient(to right, hsl(var(--border) / 0.3) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border) / 0.3) 1px, transparent 1px);
+    background-size: 48px 48px;
   }
 }
