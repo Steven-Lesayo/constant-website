@@ -142,6 +142,8 @@ export const FAQS = [
 export const DISPATCH_HUB_URL =
   import.meta.env?.VITE_DISPATCH_HUB_URL || 'http://localhost:8080'
 
+export const APK_URL = '/constant.apk'
+
 export const CONTACT = {
   phone: '+254 712 345678',
   email: 'hello@constantdelivery.co.ke',
@@ -175,7 +177,7 @@ export const FOOTER_LINKS = [
     title: 'Download',
     links: [
       { label: 'iOS App', href: APP_STORE_URL },
-      { label: 'Android App', href: PLAY_STORE_URL },
+      { label: 'Android App', href: APK_URL },
     ],
   },
 ]

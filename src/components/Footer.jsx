@@ -1,4 +1,5 @@
 import { FOOTER_LINKS, DISPATCH_HUB_URL } from '../data/constants'
+import brandLogo from '../assets/constant-logo-brand.png'
 
 export default function Footer() {
   return (
@@ -6,10 +7,13 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
           <div className="col-span-2 md:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg gradient-primary flex items-center justify-center text-white font-bold text-sm">
-                C
-              </div>
+            <div className="flex items-center gap-2.5 mb-4">
+              <img
+                src={brandLogo}
+                alt="Constant"
+                className="w-8 h-8 rounded-lg object-cover"
+                style={{ boxShadow: '0 10px 30px rgba(124, 58, 237, 0.24)' }}
+              />
               <span className="text-foreground font-bold text-lg">Constant</span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">

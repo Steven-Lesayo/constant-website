@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-scroll'
-import { HERO, APP_STORE_URL, PLAY_STORE_URL } from '../data/constants'
+import { HERO, APP_STORE_URL, APK_URL } from '../data/constants'
 
 export default function Hero() {
   return (
@@ -36,9 +36,7 @@ export default function Hero() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
             <a
-              href={PLAY_STORE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={APK_URL}
               className="btn-primary px-8 py-3 rounded-xl text-base font-semibold flex items-center gap-2"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -86,9 +84,7 @@ export default function Hero() {
                   App Store
                 </a>
                 <a
-                  href={PLAY_STORE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={APK_URL}
                   className="h-8 w-24 rounded bg-card border border-border flex items-center justify-center text-xs text-muted-foreground hover:bg-accent transition-colors"
                 >
                   Google Play

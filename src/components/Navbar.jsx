@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-scroll'
-import { NAV_LINKS, APP_STORE_URL, PLAY_STORE_URL } from '../data/constants'
+import { NAV_LINKS, APK_URL } from '../data/constants'
+import brandLogo from '../assets/constant-logo-brand.png'
 import LoginModal from './LoginModal'
 import { useTheme } from './ThemeProvider'
 
@@ -28,11 +29,14 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <a href="#hero" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg gradient-primary flex items-center justify-center text-white font-bold text-sm">
-              C
-            </div>
-            <span className="text-white font-bold text-xl">
+          <a href="#hero" className="flex items-center gap-2.5">
+            <img
+              src={brandLogo}
+              alt="Constant"
+              className="w-8 h-8 rounded-lg object-cover"
+              style={{ boxShadow: '0 10px 30px rgba(124, 58, 237, 0.24)' }}
+            />
+            <span className="text-foreground font-bold text-xl">
               Constant <span className="text-muted-foreground font-normal">Deliveries</span>
             </span>
           </a>
@@ -73,9 +77,7 @@ export default function Navbar() {
               Login
             </button>
             <a
-              href={PLAY_STORE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={APK_URL}
               className="btn-primary px-5 py-2 rounded-lg text-sm font-medium"
             >
               Download App
@@ -165,9 +167,7 @@ export default function Navbar() {
                 Login
               </button>
               <a
-                href={PLAY_STORE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={APK_URL}
                 onClick={() => setMenuOpen(false)}
                 className="w-full btn-primary px-4 py-2 rounded-lg text-sm font-medium block text-center"
               >
