@@ -149,8 +149,8 @@ export const DISPATCH_HUB_URL =
 export const APK_URL = '/constant.apk'
 
 export const CONTACT = {
-  phone: '+254 712 345678',
-  email: 'hello@constantdelivery.co.ke',
+  phone: '0799200020',
+  email: 'lesitez@live.com',
   social: [
     { label: 'X', href: 'https://x.com/constantdelivery' },
     { label: 'IG', href: 'https://instagram.com/constantdelivery' },
