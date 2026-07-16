@@ -179,8 +179,8 @@ export const FOOTER_LINKS = [
   {
     title: 'Legal',
     links: [
-      { label: 'Privacy Policy', href: `${DISPATCH_HUB_URL}/privacy` },
-      { label: 'Terms of Service', href: `${DISPATCH_HUB_URL}/terms` },
+      { label: 'Privacy Policy', href: '/privacy' },
+      { label: 'Terms of Service', href: '/terms' },
     ],
   },
   {
