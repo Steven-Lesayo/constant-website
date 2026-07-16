@@ -1,6 +1,7 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { CONTACT, DISPATCH_HUB_URL } from '../data/constants'
+import { CONTACT } from '../data/constants'
 
 export default function ContactForm() {
   const [form, setForm] = useState({
@@ -142,9 +143,9 @@ export default function ContactForm() {
                 />
                 <p className="text-muted-foreground text-xs">
                   By submitting, you agree to our{' '}
-                  <a href={`${DISPATCH_HUB_URL}/privacy`} className="text-primary hover:underline">
+                  <Link to="/privacy" className="text-primary hover:underline">
                     Privacy Policy
-                  </a>
+                  </Link>
                   .
                 </p>
                 <button

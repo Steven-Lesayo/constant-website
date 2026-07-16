@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { FOOTER_LINKS, DISPATCH_HUB_URL } from '../data/constants'
 import brandLogo from '../assets/constant-logo-brand.png'
 
@@ -47,9 +48,9 @@ export default function Footer() {
             &copy; 2026 Constant. All rights reserved.
           </p>
           <div className="flex items-center gap-4 text-xs text-muted-foreground">
-            <a href={`${DISPATCH_HUB_URL}/privacy`} className="hover:text-primary transition-colors">
+            <Link to="/privacy" className="hover:text-primary transition-colors">
               Privacy Policy
-            </a>
+            </Link>
             <a href={`${DISPATCH_HUB_URL}/terms`} className="hover:text-primary transition-colors">
               Terms of Service
             </a>
