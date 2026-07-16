@@ -2,7 +2,6 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Features from './components/Features'
 import HowItWorks from './components/HowItWorks'
-import Screenshots from './components/Screenshots'
 import Stats from './components/Stats'
 import Testimonials from './components/Testimonials'
 import ForBusiness from './components/ForBusiness'
@@ -19,7 +18,6 @@ export default function App() {
       <Hero />
       <Features />
       <HowItWorks />
-      <Screenshots />
       <Stats />
       <Testimonials />
       <ForBusiness />
