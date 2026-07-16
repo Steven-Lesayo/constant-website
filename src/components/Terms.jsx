@@ -24,87 +24,148 @@ export default function Terms() {
           <span className="text-foreground font-bold text-lg">Constant</span>
         </div>
 
-        <h1 className="text-3xl sm:text-4xl font-bold mb-2">Terms of Service</h1>
+        <h1 className="text-3xl sm:text-4xl font-bold mb-2">Terms and Conditions</h1>
         <p className="text-muted-foreground text-sm mb-10">
           Last updated: July 2026
         </p>
 
         <div className="space-y-8 text-muted-foreground">
           <p>
-            These Terms of Service ("Terms") govern your use of the Constant mobile app, website, and dispatch hub (collectively, the "Services"). By using Constant, you agree to these Terms. If you do not agree, do not use the Services.
+            These Terms and Conditions ("Terms") govern your access to and use of the Constant mobile app, website, and dispatch hub (collectively, the "Services"), operated by Constant ("we," "us," "our"). By creating an account or using the Services, you agree to these Terms.
           </p>
 
           <section>
-            <h2 className="text-foreground text-xl font-semibold mb-4">1. The Service</h2>
-            <p>Constant connects users with independent delivery riders for the purpose of transporting parcels and goods. We facilitate the connection between customers, riders, and merchants — we are not a common carrier and do not transport goods ourselves.</p>
-          </section>
-
-          <section>
-            <h2 className="text-foreground text-xl font-semibold mb-4">2. Eligibility</h2>
-            <p>You must be at least 18 years old to use the Services. By creating an account, you represent that you are legally capable of entering into binding contracts.</p>
-          </section>
-
-          <section>
-            <h2 className="text-foreground text-xl font-semibold mb-4">3. Account Registration</h2>
-            <p>You are responsible for maintaining the confidentiality of your account credentials and for all activity under your account. You agree to provide accurate, current information and to update it as necessary.</p>
-          </section>
-
-          <section>
-            <h2 className="text-foreground text-xl font-semibold mb-4">4. Delivery Rules</h2>
-            <h3 className="text-foreground font-medium mt-4 mb-2">4.1 Prohibited Items</h3>
-            <p>You may not use Constant to transport illegal items, hazardous materials, firearms, perishable goods without proper packaging, or any item whose transport violates applicable law. Violation may result in account termination and legal action.</p>
-
-            <h3 className="text-foreground font-medium mt-4 mb-2">4.2 Collection Period</h3>
-            <p>If a package is not collected within 3 days of delivery attempt, our support team will contact you to arrange redelivery or storage at a nearby hub. Storage fees may apply after this period.</p>
-
-            <h3 className="text-foreground font-medium mt-4 mb-2">4.3 Damaged Items</h3>
-            <p>Every package is handled with care. In the rare event of damage, contact our support team within 24 hours of delivery to initiate a claims process. Claims are assessed on a case-by-case basis and may be subject to investigation.</p>
-          </section>
-
-          <section>
-            <h2 className="text-foreground text-xl font-semibold mb-4">5. Payments and Fees</h2>
-            <p>Delivery fees are displayed before you confirm a request. Payment may be made via M-Pesa or cash at the point of delivery. If a delivery fails due to reasons on our end, you receive a full refund. Cancellations made before pickup are also fully refunded.</p>
-          </section>
-
-          <section>
-            <h2 className="text-foreground text-xl font-semibold mb-4">6. Rider Conduct and Responsibility</h2>
-            <p>Riders are independent contractors, not employees of Constant. While we facilitate the connection and provide tracking and support tools, we are not responsible for the conduct of riders. Concerns about rider behaviour should be reported through our support channels.</p>
-          </section>
-
-          <section>
-            <h2 className="text-foreground text-xl font-semibold mb-4">7. Merchant Accounts</h2>
-            <p>Merchant accounts are subject to additional approval. Pending approval, merchants have limited access to the platform. Approved merchants are responsible for ensuring the accuracy of delivery information provided through their account.</p>
-          </section>
-
-          <section>
-            <h2 className="text-foreground text-xl font-semibold mb-4">8. Prohibited Conduct</h2>
-            <p>You agree not to:</p>
+            <h2 className="text-foreground text-xl font-semibold mb-4">1. Who These Terms Apply To</h2>
+            <p>Constant serves several types of users, each with additional obligations noted below:</p>
             <ul className="list-disc pl-5 space-y-1 mt-2">
-              <li>Use the Services for any unlawful purpose</li>
-              <li>Attempt to manipulate the platform, including creating fake delivery requests</li>
-              <li>Harass, abuse, or threaten riders, customers, or staff</li>
-              <li>Access or attempt to access accounts without authorisation</li>
-              <li>Use automated tools to interact with the platform without our written consent</li>
+              <li><strong>Customers</strong> — request and pay for deliveries</li>
+              <li><strong>Riders</strong> — accept and fulfill delivery requests</li>
+              <li><strong>Merchants</strong> — request deliveries on behalf of their own customers via the dispatch hub</li>
+              <li><strong>Admin/Staff</strong> — operate and manage the platform internally</li>
             </ul>
           </section>
 
           <section>
-            <h2 className="text-foreground text-xl font-semibold mb-4">9. Termination</h2>
-            <p>We reserve the right to suspend or terminate accounts that violate these Terms or engage in conduct that we deem harmful to the platform, its users, or the public.</p>
+            <h2 className="text-foreground text-xl font-semibold mb-4">2. Eligibility</h2>
+            <p>You must be at least 18 years old to create an account and use the Services. By using the Services, you confirm that you meet this requirement and that all information you provide is accurate.</p>
           </section>
 
           <section>
-            <h2 className="text-foreground text-xl font-semibold mb-4">10. Limitation of Liability</h2>
-            <p>To the maximum extent permitted by law, Constant shall not be liable for indirect, incidental, or consequential damages arising out of your use of the Services. Our total liability is limited to the amount you paid for the specific delivery giving rise to the claim.</p>
+            <h2 className="text-foreground text-xl font-semibold mb-4">3. Account Registration</h2>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>You are responsible for maintaining the confidentiality of your login credentials.</li>
+              <li>You must provide accurate registration information and keep it up to date.</li>
+              <li>You are responsible for all activity that occurs under your account.</li>
+              <li>We reserve the right to suspend or terminate accounts that provide false information, violate these Terms, or are used fraudulently.</li>
+            </ul>
           </section>
 
           <section>
-            <h2 className="text-foreground text-xl font-semibold mb-4">11. Changes to These Terms</h2>
-            <p>We may update these Terms from time to time. Continued use of the Services after changes constitutes acceptance of the new Terms. We will notify you of significant changes via in-app notification or email.</p>
+            <h2 className="text-foreground text-xl font-semibold mb-4">4. How the Service Works</h2>
+
+            <h3 className="text-foreground font-medium mt-4 mb-2">4.1 For Customers</h3>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>You may request on-demand or scheduled deliveries through the app.</li>
+              <li>Delivery pricing, availability, and estimated timing are provided at the time of request and may vary based on distance, demand, and location.</li>
+              <li>You are responsible for ensuring the accuracy of pickup/drop-off details and that delivered items comply with Section 7 (Prohibited Items).</li>
+            </ul>
+
+            <h3 className="text-foreground font-medium mt-4 mb-2">4.2 For Riders</h3>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Riders are independent contractors, not employees of Constant, unless otherwise agreed in a separate written agreement.</li>
+              <li>Riders are responsible for complying with applicable traffic laws, holding any required licenses/permits, and safely handling deliveries.</li>
+              <li>Constant may deactivate rider accounts for safety violations, repeated customer complaints, or fraudulent activity.</li>
+            </ul>
+
+            <h3 className="text-foreground font-medium mt-4 mb-2">4.3 For Merchants</h3>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Merchants may request deliveries on behalf of their end customers through the dispatch hub.</li>
+              <li>Merchants are responsible for the accuracy of order and address details submitted through their dashboard.</li>
+            </ul>
           </section>
 
           <section>
-            <h2 className="text-foreground text-xl font-semibold mb-4">12. Contact</h2>
+            <h2 className="text-foreground text-xl font-semibold mb-4">5. Payments</h2>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Payments may be made via M-Pesa or cash, as selected at the time of request.</li>
+              <li>Delivery fees are disclosed before you confirm a request.</li>
+              <li>M-Pesa transactions are processed through Safaricom's payment infrastructure; Constant does not store your M-Pesa PIN.</li>
+              <li>Refunds, where applicable, will be assessed on a case-by-case basis (e.g., failed delivery, platform error).</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-foreground text-xl font-semibold mb-4">6. Cancellations</h2>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Customers may cancel a delivery request before a rider is assigned at no charge.</li>
+              <li>Cancellations after a rider has been assigned or has begun travel may incur a cancellation fee.</li>
+              <li>Constant reserves the right to cancel or reassign a delivery due to safety concerns, rider unavailability, or prohibited item detection.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-foreground text-xl font-semibold mb-4">7. Prohibited Items and Conduct</h2>
+            <p className="mb-2">You may not use Constant to request delivery of:</p>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Illegal substances or contraband</li>
+              <li>Weapons or explosives</li>
+              <li>Hazardous materials</li>
+              <li>Any item prohibited under Kenyan law</li>
+            </ul>
+            <p className="mt-4 mb-2">You agree not to:</p>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Use the Services for any unlawful purpose</li>
+              <li>Harass, threaten, or abuse riders, customers, or staff (including through in-app chat)</li>
+              <li>Attempt to interfere with the security or normal operation of the Services</li>
+              <li>Misrepresent your identity or the contents of a delivery request</li>
+            </ul>
+            <p className="mt-2">Violation of this section may result in immediate account suspension or termination, and may be reported to relevant authorities where applicable.</p>
+          </section>
+
+          <section>
+            <h2 className="text-foreground text-xl font-semibold mb-4">8. Real-Time Tracking and Communication</h2>
+            <p>By using the Services, you consent to location tracking as described in our Privacy Policy, which is necessary for rider assignment, live tracking, and delivery coordination. In-app chat is provided to facilitate delivery coordination and should not be used for unrelated communication.</p>
+          </section>
+
+          <section>
+            <h2 className="text-foreground text-xl font-semibold mb-4">9. Limitation of Liability</h2>
+            <p>To the maximum extent permitted by law:</p>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Constant acts as a platform connecting customers, riders, and merchants, and is not a common carrier or insurer of goods.</li>
+              <li>Constant is not liable for indirect, incidental, or consequential damages arising from use of the Services.</li>
+              <li>Constant's total liability for any claim relating to a specific delivery is limited to the fee paid for that delivery, except where liability cannot be limited by law.</li>
+              <li>We do not guarantee uninterrupted or error-free operation of the Services (including tracking, notifications, or chat features).</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-foreground text-xl font-semibold mb-4">10. Account Suspension and Termination</h2>
+            <p>We may suspend or terminate your access to the Services, with or without notice, if:</p>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>You violate these Terms</li>
+              <li>We suspect fraudulent, abusive, or unlawful activity</li>
+              <li>Required by law or regulatory request</li>
+            </ul>
+            <p className="mt-2">You may stop using the Services and request account deletion at any time in accordance with our Privacy Policy.</p>
+          </section>
+
+          <section>
+            <h2 className="text-foreground text-xl font-semibold mb-4">11. Intellectual Property</h2>
+            <p>All content, branding, and technology associated with Constant (including the app, website, and dispatch hub) are the property of Constant or its licensors. You may not copy, modify, or distribute any part of the Services without permission.</p>
+          </section>
+
+          <section>
+            <h2 className="text-foreground text-xl font-semibold mb-4">12. Changes to These Terms</h2>
+            <p>We may update these Terms from time to time. Continued use of the Services after changes take effect constitutes acceptance of the revised Terms. Where changes are significant, we will provide additional notice.</p>
+          </section>
+
+          <section>
+            <h2 className="text-foreground text-xl font-semibold mb-4">13. Governing Law and Disputes</h2>
+            <p>These Terms are governed by the laws of Kenya. Any disputes arising from these Terms or use of the Services will be subject to the jurisdiction of the courts of Kenya, unless otherwise required by applicable law.</p>
+          </section>
+
+          <section>
+            <h2 className="text-foreground text-xl font-semibold mb-4">14. Contact Us</h2>
             <p>For questions about these Terms, contact us at:</p>
             <p className="mt-2">
               <strong>Email:</strong> lesitez@live.com<br />
