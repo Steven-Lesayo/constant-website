@@ -12,6 +12,7 @@ import TrackOrder from './components/TrackOrder'
 import ContactForm from './components/ContactForm'
 import Footer from './components/Footer'
 import Privacy from './components/Privacy'
+import Terms from './components/Terms'
 
 function HomePage() {
   return (
@@ -39,6 +40,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
         </Routes>
       </div>
     </BrowserRouter>

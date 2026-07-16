@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { FOOTER_LINKS, DISPATCH_HUB_URL } from '../data/constants'
+import { FOOTER_LINKS } from '../data/constants'
 import brandLogo from '../assets/constant-logo-brand.png'
 
 export default function Footer() {
@@ -51,9 +51,9 @@ export default function Footer() {
             <Link to="/privacy" className="hover:text-primary transition-colors">
               Privacy Policy
             </Link>
-            <a href={`${DISPATCH_HUB_URL}/terms`} className="hover:text-primary transition-colors">
+            <Link to="/terms" className="hover:text-primary transition-colors">
               Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
       </div>
