@@ -106,10 +106,14 @@
   }
 
   .glass-card {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+  }
+
+  .dark .glass-card {
     background: hsl(var(--card) / 0.5);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid hsl(var(--border));
   }
 
   .glass-card-hover {

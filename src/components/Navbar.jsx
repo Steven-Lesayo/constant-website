@@ -101,7 +101,7 @@ export default function Navbar() {
 
           {/* Mobile hamburger */}
           <button
-            className="lg:hidden text-white p-2"
+            className="lg:hidden text-foreground p-2"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             <svg
