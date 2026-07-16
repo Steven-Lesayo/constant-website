@@ -6,63 +6,75 @@ export const NAV_LINKS = [
   { label: 'Home', href: '#hero' },
   { label: 'Features', href: '#features' },
   { label: 'How it Works', href: '#how-it-works' },
+  { label: 'For Business', href: '#for-business' },
   { label: 'FAQ', href: '#faq' },
   { label: 'Contact', href: '#contact' },
 ]
 
 export const HERO = {
-  headline: 'Constant Delivery – Your World, Delivered Faster',
+  eyebrow: 'Delivery, done right.',
+  headline: 'Your delivery. Tracked, on time, every time.',
   subheadline:
-    'Real-time tracking, reliable couriers, and seamless experience — just like our mobile app.',
-  stats: '10k+ deliveries today',
-  rating: '4.9',
+    'Constant connects you with trusted riders for on-demand and scheduled deliveries — with live GPS tracking, in-app chat, and pay-your-way convenience. No guessing where your package is. No waiting on hold.',
+  microcopy: 'Available on Android \u00B7 iOS coming soon',
 }
 
 export const FEATURES = [
   {
     icon: '📍',
-    title: 'Real-time GPS Tracking',
+    title: 'Real-Time Tracking',
+    headline: 'Watch it move, not just wonder.',
     description:
-      'Track your package every step of the way with live Google Maps integration, just like ride-hailing.',
+      'Track your rider on a live map from pickup to drop-off. No more "where\'s my order" messages \u2014 just open the app and see for yourself.',
   },
   {
-    icon: '⚡',
-    title: 'Instant Pickup & Delivery',
+    icon: '💬',
+    title: 'In-App Chat',
+    headline: 'Talk directly to your rider.',
     description:
-      'Request a pickup and get a rider at your location in minutes. On-demand or scheduled, your choice.',
+      'Give directions, confirm details, or just say "I\'m at the gate" \u2014 all without sharing your phone number.',
   },
   {
-    icon: '🔒',
-    title: 'Secure Payments & Chat',
+    icon: '💳',
+    title: 'Flexible Payments',
+    headline: 'Pay however works for you.',
     description:
-      'Pay via M-Pesa or cash on delivery. Chat directly with your rider through our in-app messaging.',
+      'M-Pesa or cash \u2014 Constant fits into your routine, not the other way around.',
   },
   {
     icon: '📅',
-    title: 'Schedule or On-Demand',
+    title: 'Schedule or Go Now',
+    headline: 'Plan ahead, or go right now.',
     description:
-      'Book now or plan ahead with scheduled deliveries. Flexible options for businesses and individuals.',
+      'Need something delivered next Tuesday at 9am? Or in the next 20 minutes? Constant handles both.',
+  },
+  {
+    icon: '🔔',
+    title: 'Instant Notifications',
+    headline: 'Stay in the loop, automatically.',
+    description:
+      'From "rider assigned" to "delivered," you\u2019ll know the moment something changes \u2014 no need to keep checking.',
   },
 ]
 
 export const HOW_IT_WORKS = [
   {
     step: 1,
-    title: 'Place Your Order',
+    title: 'Request',
     description:
-      'Tell us pickup and dropoff locations, package details, and choose on-demand or scheduled delivery.',
+      'Tell us what you need delivered and where it\u2019s going. Pick now or schedule for later.',
   },
   {
     step: 2,
-    title: 'Track in Real Time',
+    title: 'Track',
     description:
-      'Watch your rider approach on a live map. Get notified at every milestone — from pickup to delivery.',
+      'We match you with a nearby rider. Watch them move toward you in real time.',
   },
   {
     step: 3,
-    title: 'Delivered Safely',
+    title: 'Receive',
     description:
-      'Pay securely via M-Pesa or cash. Rate your experience and reorder with one tap.',
+      'Your delivery arrives. Rate your experience, and you\u2019re done.',
   },
 ]
 
@@ -75,67 +87,59 @@ export const STATS = [
 
 export const TESTIMONIALS = [
   {
-    name: 'Sarah Wanjiku',
+    name: 'Amina',
     role: 'Small Business Owner',
-    avatar: 'SW',
+    avatar: 'A',
     quote:
-      'Constant has completely transformed how I deliver orders to my customers. Real-time tracking gives us all peace of mind.',
+      'I run a small bakery and Constant has become part of how I operate. My customers get real-time updates without me lifting a finger.',
     rating: 5,
   },
   {
-    name: 'James Ochieng',
-    role: 'Online Store Manager',
-    avatar: 'JO',
+    name: 'Brian',
+    role: 'Regular Customer',
+    avatar: 'B',
     quote:
-      'The scheduled delivery feature is a game-changer. I can plan my logistics days in advance.',
+      'The tracking map is the whole reason I switched. I actually know when my parcel is arriving instead of guessing.',
     rating: 5,
   },
   {
-    name: 'Grace Muthoni',
-    role: 'Freelancer',
+    name: 'Faith',
+    role: 'Merchant Partner',
+    avatar: 'F',
     quote:
-      'Affordable, fast, and reliable. I use Constant for all my courier needs across Nairobi.',
+      'Simple to use, and M-Pesa built in makes it painless. It just works.',
     rating: 5,
-    avatar: 'GM',
-  },
-  {
-    name: 'Peter Kamau',
-    role: 'E-commerce Entrepreneur',
-    quote:
-      'The M-Pesa integration makes payments seamless. My customers love the pay-on-delivery option.',
-    rating: 5,
-    avatar: 'PK',
   },
 ]
 
 export const FAQS = [
   {
-    q: 'How does Constant work?',
-    a: 'Download the app, create an account, and request a delivery. A nearby rider picks up your package and delivers it to the destination. Track everything in real time.',
+    q: 'Is Constant available in my area?',
+    a: 'We\u2019re actively expanding coverage zone by zone, starting in Nairobi. Download the app to check availability at your location.',
   },
   {
-    q: 'What happens if a parcel exceeds the 3-day collection period?',
-    a: 'If a package is not collected within 3 days, our support team will reach out to arrange redelivery or storage at a nearby hub.',
+    q: 'How do I pay?',
+    a: 'Choose M-Pesa or cash at the point of delivery \u2014 whichever works best for you.',
   },
   {
-    q: 'What are your delivery schedules?',
-    a: 'We operate 24/7. You can choose on-demand delivery for immediate pickup or schedule for a future date and time.',
+    q: 'Can I schedule a delivery for later?',
+    a: 'Yes. Choose a date and time when you request your delivery, and we\u2019ll take care of the rest.',
   },
   {
-    q: 'What if my package is damaged?',
-    a: 'We handle every package with care. In the rare event of damage, contact our support team within 24 hours and we will initiate a claims process.',
+    q: 'What if I need to contact my rider?',
+    a: 'Use the in-app chat to message your rider directly \u2014 no phone numbers exchanged, no hassle.',
   },
   {
-    q: 'Where are your offices located?',
-    a: 'Our headquarters is in Nairobi, with pickup points across major towns in Kenya. Check the app for the nearest location.',
+    q: 'Is my package tracked the whole way?',
+    a: 'From the moment a rider is assigned to the moment it\u2019s delivered, you\u2019ll see it live on the map.',
   },
   {
-    q: 'What is your refund policy?',
-    a: 'If a delivery fails due to reasons on our end, you receive a full refund. Cancellations made before pickup are also fully refunded.',
+    q: 'I run a business \u2014 how is this different from personal delivery?',
+    a: 'Merchant accounts get a dashboard for managing multiple deliveries, tracking riders, and reviewing performance \u2014 built for volume, not just one-off orders.',
   },
   {
-    q: 'What do you deliver?',
-    a: 'Documents, parcels, groceries, food, electronics, and more. If it fits within our size and weight limits, we deliver it.',
+    q: 'Is my package insured?',
+    a: 'Every package is covered up to KES 30,000. For higher-value items, contact support before dispatch.',
   },
 ]
 
@@ -157,27 +161,33 @@ export const CONTACT = {
 
 export const FOOTER_LINKS = [
   {
-    title: 'Quick Links',
+    title: 'Product',
     links: [
-      { label: 'Home', href: '#hero' },
       { label: 'Features', href: '#features' },
-      { label: 'How it Works', href: '#how-it-works' },
-      { label: 'FAQ', href: '#faq' },
+      { label: 'How It Works', href: '#how-it-works' },
+      { label: 'For Business', href: '#for-business' },
     ],
   },
   {
-    title: 'Support',
+    title: 'Company',
     links: [
-      { label: 'Contact Us', href: '#contact' },
+      { label: 'About', href: `${DISPATCH_HUB_URL}/about` },
+      { label: 'Careers', href: `${DISPATCH_HUB_URL}/careers` },
+      { label: 'Contact', href: '#contact' },
+    ],
+  },
+  {
+    title: 'Legal',
+    links: [
       { label: 'Privacy Policy', href: `${DISPATCH_HUB_URL}/privacy` },
-      { label: 'Terms & Conditions', href: `${DISPATCH_HUB_URL}/terms` },
+      { label: 'Terms of Service', href: `${DISPATCH_HUB_URL}/terms` },
     ],
   },
   {
-    title: 'Download',
+    title: 'Get the App',
     links: [
-      { label: 'iOS App', href: APP_STORE_URL },
-      { label: 'Android App', href: APK_URL },
+      { label: 'Google Play', href: APK_URL },
+      { label: 'App Store (coming soon)', href: APP_STORE_URL },
     ],
   },
 ]

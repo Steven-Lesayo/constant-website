@@ -5,7 +5,9 @@ import HowItWorks from './components/HowItWorks'
 import Screenshots from './components/Screenshots'
 import Stats from './components/Stats'
 import Testimonials from './components/Testimonials'
+import ForBusiness from './components/ForBusiness'
 import FAQ from './components/FAQ'
+import FinalCTA from './components/FinalCTA'
 import TrackOrder from './components/TrackOrder'
 import ContactForm from './components/ContactForm'
 import Footer from './components/Footer'
@@ -20,8 +22,10 @@ export default function App() {
       <Screenshots />
       <Stats />
       <Testimonials />
-      <TrackOrder />
+      <ForBusiness />
       <FAQ />
+      <FinalCTA />
+      <TrackOrder />
       <ContactForm />
       <Footer />
     </div>

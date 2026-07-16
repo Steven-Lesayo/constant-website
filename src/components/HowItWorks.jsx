@@ -13,10 +13,10 @@ export default function HowItWorks() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            How It Works
+            Three steps. That's it.
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Three simple steps to get your package from point A to point B.
+            Request, track, receive — and you're done.
           </p>
         </motion.div>
 

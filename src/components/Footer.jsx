@@ -17,8 +17,7 @@ export default function Footer() {
               <span className="text-foreground font-bold text-lg">Constant</span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Your world, delivered faster. Real-time tracking, reliable couriers,
-              and seamless delivery experiences.
+              Delivery you can count on.
             </p>
           </div>
 
@@ -45,14 +44,14 @@ export default function Footer() {
 
         <div className="border-t border-border pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-muted-foreground text-xs">
-            Constant @2026. All rights reserved.
+            &copy; 2026 Constant. All rights reserved.
           </p>
           <div className="flex items-center gap-4 text-xs text-muted-foreground">
             <a href={`${DISPATCH_HUB_URL}/privacy`} className="hover:text-primary transition-colors">
               Privacy Policy
             </a>
             <a href={`${DISPATCH_HUB_URL}/terms`} className="hover:text-primary transition-colors">
-              Terms & Conditions
+              Terms of Service
             </a>
           </div>
         </div>

@@ -24,7 +24,7 @@ export default function Features() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Everything You Need
+            Everything you need, nothing you don't
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             From real-time tracking to secure payments — Constant has every delivery
@@ -48,9 +48,12 @@ export default function Features() {
               <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center text-2xl mb-5">
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-3">
+              <h3 className="text-xl font-semibold text-foreground mb-2">
                 {feature.title}
               </h3>
+              <h4 className="text-sm font-medium text-primary mb-3">
+                {feature.headline}
+              </h4>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 {feature.description}
               </p>
