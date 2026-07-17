@@ -128,12 +128,13 @@ export default function Terms() {
           </section>
 
           <section>
-            <h2 className="text-foreground text-xl font-semibold mb-4">9. Limitation of Liability</h2>
+            <h2 className="text-foreground text-xl font-semibold mb-4">9. Limitation of Liability and Loss Coverage</h2>
             <p>To the maximum extent permitted by law:</p>
             <ul className="list-disc pl-5 space-y-1">
               <li>Constant acts as a platform connecting customers, riders, and merchants, and is not a common carrier or insurer of goods.</li>
               <li>Constant is not liable for indirect, incidental, or consequential damages arising from use of the Services.</li>
-              <li>Constant's total liability for any claim relating to a specific delivery is limited to the fee paid for that delivery, except where liability cannot be limited by law.</li>
+              <li>For loss of or damage to a package during delivery, Constant's total liability is limited to KES 30,000 per delivery. This liability cap applies regardless of the declared or actual value of the items being delivered.</li>
+              <li>Customers who need to ship items valued above KES 30,000 must contact support before dispatch to arrange additional coverage. Without such arrangements, liability remains capped at KES 30,000.</li>
               <li>We do not guarantee uninterrupted or error-free operation of the Services (including tracking, notifications, or chat features).</li>
             </ul>
           </section>

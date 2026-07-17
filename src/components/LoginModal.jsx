@@ -1,6 +1,9 @@
-import { DISPATCH_HUB_URL } from '../data/constants'
+import { useState } from 'react'
+import { DISPATCH_HUB_URL, APK_URL } from '../data/constants'
 
 export default function LoginModal({ open, onClose }) {
+  const [showCustomerHint, setShowCustomerHint] = useState(false)
+
   if (!open) return null
 
   const login = () => {
@@ -65,7 +68,11 @@ export default function LoginModal({ open, onClose }) {
             </div>
           </button>
 
-          <div className="glass-card rounded-xl p-4 text-left opacity-70">
+          <button
+            type="button"
+            onClick={() => setShowCustomerHint(true)}
+            className="w-full glass-card rounded-xl p-4 text-left transition-all duration-300 opacity-70 hover:opacity-100 cursor-pointer"
+          >
             <div className="flex items-center gap-4">
               <div className="w-11 h-11 rounded-lg bg-muted flex items-center justify-center text-muted-foreground shrink-0">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -77,7 +84,14 @@ export default function LoginModal({ open, onClose }) {
                 <p className="text-muted-foreground text-xs mt-0.5">Track orders via the Constant mobile app</p>
               </div>
             </div>
-          </div>
+          </button>
+          {showCustomerHint && (
+            <p className="text-xs text-muted-foreground text-center bg-muted rounded-lg px-3 py-2">
+              Customers should use the{' '}
+              <a href={APK_URL} className="text-primary hover:underline">Constant mobile app</a>
+              {' '}to track deliveries, chat with riders, and manage orders.
+            </p>
+          )}
         </div>
 
         <p className="text-muted-foreground text-xs text-center mt-6">
