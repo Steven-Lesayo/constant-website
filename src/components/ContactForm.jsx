@@ -19,12 +19,20 @@ export default function ContactForm() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
-      })
-      setSent(true)
+      const res = await fetch(
+        `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000/api'}/public/contact`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(form),
+        }
+      )
+      if (res.ok) {
+        setSent(true)
+      } else {
+        const data = await res.json()
+        throw new Error(data.error || 'Failed to send')
+      }
     } catch {
       setSent(true)
     }

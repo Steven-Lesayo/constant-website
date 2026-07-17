@@ -79,10 +79,10 @@ export const HOW_IT_WORKS = [
 ]
 
 export const STATS = [
-  { value: '25k+', label: 'small businesses served' },
-  { value: '100k+', label: 'online shoppers served' },
-  { value: '1M+', label: 'packages delivered' },
-  { value: '500M+', label: 'gross merchandise value' },
+  { value: 'Real-Time', label: 'GPS tracking on every delivery' },
+  { value: 'Live Chat', label: 'Talk to your rider in-app' },
+  { value: 'M-Pesa', label: 'Pay with mobile money or cash' },
+  { value: 'Nairobi', label: 'Coverage starting in Nairobi' },
 ]
 
 export const TESTIMONIALS = [
@@ -139,7 +139,7 @@ export const FAQS = [
   },
   {
     q: 'Is my package insured?',
-    a: 'Every package is covered up to KES 30,000. For higher-value items, contact support before dispatch.',
+    a: 'Standard liability of up to KES 30,000 applies per our Terms of Service. For higher-value items, contact support before dispatch to arrange additional coverage.',
   },
 ]
 
