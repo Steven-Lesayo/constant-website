@@ -1,69 +1,39 @@
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { TESTIMONIALS } from '../data/constants'
 
 export default function Testimonials() {
-  const [current, setCurrent] = useState(0)
-
-  const next = () => setCurrent((c) => (c + 1) % TESTIMONIALS.length)
-  const prev = () =>
-    setCurrent((c) => (c - 1 + TESTIMONIALS.length) % TESTIMONIALS.length)
-
-  const t = TESTIMONIALS[current]
-
   return (
-    <section className="py-20 lg:py-28 relative">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 lg:py-28 bg-surface-alt">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-14"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            What Our Users Say
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
+            Real people, real deliveries
           </h2>
-          <p className="text-muted-foreground text-lg">
-            Join thousands of happy customers who trust Constant.
+          <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto">
+            From a Ngara bakery to a Lavington shop — here's what actually changed.
           </p>
         </motion.div>
 
-        <div className="relative">
-          <AnimatePresence mode="wait">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {TESTIMONIALS.map((t, i) => (
             <motion.div
-              key={current}
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -50 }}
-              transition={{ duration: 0.4 }}
-              className="glass-card rounded-2xl p-8 sm:p-12 text-center"
+              key={t.name}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.12 }}
+              className="glass-card rounded-2xl p-7 flex flex-col"
             >
-              <svg
-                className="w-8 h-8 text-primary/40 mx-auto mb-6"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C7.546 6.068 5.983 8.789 5.983 11H10v10H0z" />
-              </svg>
-              <p className="text-foreground text-lg sm:text-xl leading-relaxed mb-8 italic">
-                "{t.quote}"
-              </p>
-
-              <div className="flex items-center justify-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-primary/30 flex items-center justify-center text-white font-semibold text-sm">
-                  {t.avatar}
-                </div>
-                <div className="text-left">
-                  <p className="text-foreground font-semibold">{t.name}</p>
-                  <p className="text-muted-foreground text-sm">{t.role}</p>
-                </div>
-              </div>
-
-              <div className="flex justify-center gap-1 mt-4">
-                {[...Array(t.rating)].map((_, i) => (
+              <div className="flex items-center gap-1 mb-4">
+                {[...Array(t.rating)].map((_, s) => (
                   <svg
-                    key={i}
+                    key={s}
                     className="w-4 h-4 text-yellow-400"
                     fill="currentColor"
                     viewBox="0 0 20 20"
@@ -72,40 +42,38 @@ export default function Testimonials() {
                   </svg>
                 ))}
               </div>
-            </motion.div>
-          </AnimatePresence>
 
-          <div className="flex justify-center gap-4 mt-8">
-            <button
-              onClick={prev}
-              className="w-10 h-10 rounded-full glass-card flex items-center justify-center text-foreground hover:bg-primary/20 transition-colors"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-            <div className="flex items-center gap-2">
-              {TESTIMONIALS.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setCurrent(i)}
-                  className={`w-2 h-2 rounded-full transition-all ${
-                    i === current
-                      ? 'bg-primary w-6'
-                      : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
-                  }`}
-                />
-              ))}
-            </div>
-            <button
-              onClick={next}
-              className="w-10 h-10 rounded-full glass-card flex items-center justify-center text-foreground hover:bg-primary/20 transition-colors"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-          </div>
+              <p className="text-foreground text-sm leading-relaxed mb-6 flex-1">
+                "{t.quote}"
+              </p>
+
+              <div className="mb-4 rounded-xl bg-primary/10 border border-primary/15 px-4 py-3">
+                <div className="flex items-start gap-2.5">
+                  <svg
+                    className="w-4 h-4 text-primary shrink-0 mt-0.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                  <p className="text-xs font-medium text-foreground leading-snug">
+                    {t.outcome}
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-semibold text-sm">
+                  {t.avatar}
+                </div>
+                <div>
+                  <p className="text-foreground font-semibold text-sm">{t.name}</p>
+                  <p className="text-muted-foreground text-xs">{t.role}</p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

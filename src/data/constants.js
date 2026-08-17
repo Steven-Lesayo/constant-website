@@ -88,10 +88,11 @@ export const STATS = [
 export const TESTIMONIALS = [
   {
     name: 'Amina',
-    role: 'Small Business Owner',
+    role: 'Bakery Owner, Ngara',
     avatar: 'A',
     quote:
-      'I run a small bakery and Constant has become part of how I operate. My customers get real-time updates without me lifting a finger.',
+      'I used to take calls all day asking "where is my order?" Constant shows customers the live map, so I don\u2019t have to.',
+    outcome: 'Stopped taking pickup-location calls entirely',
     rating: 5,
   },
   {
@@ -99,17 +100,25 @@ export const TESTIMONIALS = [
     role: 'Regular Customer',
     avatar: 'B',
     quote:
-      'The tracking map is the whole reason I switched. I actually know when my parcel is arriving instead of guessing.',
+      'The tracking map is the whole reason I switched. I watched my rider pull up at exactly 4:12pm instead of guessing.',
+    outcome: 'Knew the exact arrival time on every delivery',
     rating: 5,
   },
   {
     name: 'Faith',
-    role: 'Merchant Partner',
+    role: 'Merchant Partner, Lavington',
     avatar: 'F',
     quote:
-      'Simple to use, and M-Pesa built in makes it painless. It just works.',
+      'I run 30+ orders a day out of one dashboard. Riders get assigned, customers get tracked, M-Pesa just works.',
+    outcome: 'Dispatches 30+ orders a day from one dashboard',
     rating: 5,
   },
+]
+
+export const HERO_TRUST = [
+  'Live GPS tracking on every delivery',
+  'M-Pesa or cash, your choice',
+  'Covered up to KES 30,000 per delivery',
 ]
 
 export const FAQS = [

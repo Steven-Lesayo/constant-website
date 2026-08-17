@@ -25,8 +25,8 @@ function HomePage() {
       <Testimonials />
       <ForBusiness />
       <FAQ />
-      <FinalCTA />
       <TrackOrder />
+      <FinalCTA />
       <ContactForm />
       <Footer />
     </>

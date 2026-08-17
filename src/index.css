@@ -8,6 +8,7 @@
     --foreground: 224 25% 16%;
     --card: 0 0% 100%;
     --card-foreground: 224 25% 16%;
+    --surface-alt: 250 40% 96%;
     --popover: 0 0% 100%;
     --popover-foreground: 224 25% 16%;
     --primary: 262 83% 58%;
@@ -41,6 +42,7 @@
     --foreground: 240 22% 96%;
     --card: 258 31% 11%;
     --card-foreground: 240 22% 96%;
+    --surface-alt: 252 32% 9%;
     --popover: 258 31% 11%;
     --popover-foreground: 240 22% 96%;
     --primary: 262 83% 58%;
@@ -91,7 +93,10 @@
 
 @layer utilities {
   .gradient-hero {
-    background: var(--gradient-surface);
+    background:
+      radial-gradient(1100px 700px at 15% 0%, hsl(var(--primary) / 0.22), transparent 60%),
+      radial-gradient(900px 650px at 95% 100%, hsl(270 91% 65% / 0.16), transparent 55%),
+      var(--gradient-surface);
   }
 
   .gradient-primary {
@@ -121,21 +126,32 @@
   }
 
   .glass-card-hover:hover {
-    background: hsl(var(--primary) / 0.1);
-    border-color: hsl(var(--primary) / 0.3);
-    box-shadow: var(--shadow-glow);
+    border-color: hsl(var(--primary) / 0.35);
+    box-shadow: var(--shadow-md);
     transform: translateY(-4px);
   }
 
   .btn-primary {
-    background: var(--gradient-primary);
+    background: hsl(var(--primary));
     transition: all 0.3s ease;
     color: hsl(var(--primary-foreground));
   }
 
   .btn-primary:hover {
-    box-shadow: var(--shadow-glow);
+    background: hsl(var(--primary) / 0.9);
+    box-shadow: var(--shadow-md);
     transform: translateY(-1px);
+  }
+
+  .btn-inverted {
+    background: hsl(var(--primary-foreground));
+    transition: all 0.3s ease;
+    color: hsl(var(--primary));
+  }
+
+  .btn-inverted:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-lg);
   }
 
   .btn-outline {
@@ -146,7 +162,7 @@
 
   .btn-outline:hover {
     background: hsl(var(--primary) / 0.1);
-    box-shadow: var(--shadow-glow);
+    box-shadow: var(--shadow-md);
   }
 
   .text-glow {
@@ -162,6 +178,24 @@
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
+  }
+
+  .dot-pulse {
+    animation: dotPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes dotPulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.35); opacity: 0.55; }
+  }
+
+  .animate-dash {
+    stroke-dasharray: 8 8;
+    animation: dashMove 1.2s linear infinite;
+  }
+
+  @keyframes dashMove {
+    to { stroke-dashoffset: -16; }
   }
 
   .bg-dot-pattern {

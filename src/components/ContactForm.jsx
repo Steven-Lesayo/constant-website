@@ -12,12 +12,30 @@ export default function ContactForm() {
     message: '',
   })
   const [sent, setSent] = useState(false)
+  const [errors, setErrors] = useState({})
 
-  const handleChange = (e) =>
-    setForm((f) => ({ ...f, [e.target.name]: e.target.value }))
+  const validate = () => {
+    const e = {}
+    if (!form.firstName.trim()) e.firstName = 'First name is required'
+    if (!form.lastName.trim()) e.lastName = 'Last name is required'
+    if (!form.email.trim()) e.email = 'Email is required'
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) e.email = 'Invalid email format'
+    if (form.phone && !/^[\d\s+\-()]{7,15}$/.test(form.phone)) e.phone = 'Invalid phone number'
+    if (!form.message.trim()) e.message = 'Message is required'
+    else if (form.message.length > 1000) e.message = 'Message must be under 1000 characters'
+    setErrors(e)
+    return Object.keys(e).length === 0
+  }
+
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setForm((f) => ({ ...f, [name]: value }))
+    if (errors[name]) setErrors((prev) => ({ ...prev, [name]: '' }))
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    if (!validate()) return
     try {
       const res = await fetch(
         `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000/api'}/public/contact`,
@@ -33,8 +51,8 @@ export default function ContactForm() {
         const data = await res.json()
         throw new Error(data.error || 'Failed to send')
       }
-    } catch {
-      setSent(true)
+    } catch (err) {
+      alert(err.message || 'Failed to send message. Please try again.')
     }
   }
 
@@ -48,7 +66,7 @@ export default function ContactForm() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
             Contact Us
           </h2>
           <p className="text-muted-foreground text-lg">
@@ -106,49 +124,69 @@ export default function ContactForm() {
             ) : (
               <form onSubmit={handleSubmit} className="glass-card rounded-2xl p-6 space-y-4">
                 <div className="grid grid-cols-2 gap-4">
-                  <input
-                    name="firstName"
-                    value={form.firstName}
-                    onChange={handleChange}
-                    placeholder="First name"
-                    required
-                    className="bg-muted border border-input rounded-xl px-4 py-3 text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary"
-                  />
-                  <input
-                    name="lastName"
-                    value={form.lastName}
-                    onChange={handleChange}
-                    placeholder="Last name"
-                    required
-                    className="bg-muted border border-input rounded-xl px-4 py-3 text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary"
-                  />
+                  <div>
+                    <input
+                      name="firstName"
+                      value={form.firstName}
+                      onChange={handleChange}
+                      placeholder="First name"
+                      required
+                      maxLength={50}
+                      className="bg-muted border border-input rounded-xl px-4 py-3 text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary w-full"
+                    />
+                    {errors.firstName && <p className="text-destructive text-xs mt-1">{errors.firstName}</p>}
+                  </div>
+                  <div>
+                    <input
+                      name="lastName"
+                      value={form.lastName}
+                      onChange={handleChange}
+                      placeholder="Last name"
+                      required
+                      maxLength={50}
+                      className="bg-muted border border-input rounded-xl px-4 py-3 text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary w-full"
+                    />
+                    {errors.lastName && <p className="text-destructive text-xs mt-1">{errors.lastName}</p>}
+                  </div>
                 </div>
-                <input
-                  name="email"
-                  type="email"
-                  value={form.email}
-                  onChange={handleChange}
-                  placeholder="Email"
-                  required
-                  className="w-full bg-muted border border-input rounded-xl px-4 py-3 text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary"
-                />
-                <input
-                  name="phone"
-                  type="tel"
-                  value={form.phone}
-                  onChange={handleChange}
-                  placeholder="Phone number"
-                  className="w-full bg-muted border border-input rounded-xl px-4 py-3 text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary"
-                />
-                <textarea
-                  name="message"
-                  value={form.message}
-                  onChange={handleChange}
-                  placeholder="Your message"
-                  required
-                  rows={4}
-                  className="w-full bg-muted border border-input rounded-xl px-4 py-3 text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary resize-none"
-                />
+                <div>
+                  <input
+                    name="email"
+                    type="email"
+                    value={form.email}
+                    onChange={handleChange}
+                    placeholder="Email"
+                    required
+                    maxLength={100}
+                    className="w-full bg-muted border border-input rounded-xl px-4 py-3 text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary"
+                  />
+                  {errors.email && <p className="text-destructive text-xs mt-1">{errors.email}</p>}
+                </div>
+                <div>
+                  <input
+                    name="phone"
+                    type="tel"
+                    value={form.phone}
+                    onChange={handleChange}
+                    placeholder="Phone number"
+                    maxLength={15}
+                    className="w-full bg-muted border border-input rounded-xl px-4 py-3 text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary"
+                  />
+                  {errors.phone && <p className="text-destructive text-xs mt-1">{errors.phone}</p>}
+                </div>
+                <div>
+                  <textarea
+                    name="message"
+                    value={form.message}
+                    onChange={handleChange}
+                    placeholder="Your message"
+                    required
+                    rows={4}
+                    maxLength={1000}
+                    className="w-full bg-muted border border-input rounded-xl px-4 py-3 text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary resize-none"
+                  />
+                  {errors.message && <p className="text-destructive text-xs mt-1">{errors.message}</p>}
+                </div>
                 <p className="text-muted-foreground text-xs">
                   By submitting, you agree to our{' '}
                   <Link to="/privacy" className="text-primary hover:underline">

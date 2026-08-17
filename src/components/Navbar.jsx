@@ -22,7 +22,7 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-background/80 backdrop-blur-xl border-b border-border'
+          ? 'bg-background/85 backdrop-blur-xl border-b border-border shadow-sm'
           : 'bg-transparent'
       }`}
     >
@@ -132,7 +132,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="lg:hidden bg-background/95 backdrop-blur-xl border-t border-border">
+        <div className="lg:hidden bg-background/95 backdrop-blur-xl border-t border-border max-h-[80vh] overflow-y-auto">
           <div className="px-4 py-4 space-y-3">
             {NAV_LINKS.map((link) => (
               <Link
