@@ -13,6 +13,7 @@ import ContactForm from './components/ContactForm'
 import Footer from './components/Footer'
 import Privacy from './components/Privacy'
 import Terms from './components/Terms'
+import DeleteAccount from './components/DeleteAccount'
 
 function HomePage() {
   return (
@@ -41,6 +42,7 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
+          <Route path="/delete-account" element={<DeleteAccount />} />
         </Routes>
       </div>
     </BrowserRouter>
